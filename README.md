@@ -74,7 +74,7 @@ This application follows privacy-first principles:
 
   
 ## Application Preview
-![Screenshot-clone2](https://github.com/user-attachments/assets/20520d5f-78ab-4700-8c75-16bb50dcca50)
+![Image](https://github.com/anjSingh453/Federated-Learning-/blob/main/Image/app3.png)
 ![Screenshot clone](https://github.com/user-attachments/assets/a3c4d862-43bb-442d-bbba-973527f15702)
 ![Screenshot 2024-12-16 234547](https://github.com/user-attachments/assets/072a4b94-3428-463a-ba46-7ebe20e7e76e)
 
