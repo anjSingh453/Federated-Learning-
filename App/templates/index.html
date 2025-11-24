@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/33b3cdea20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Healthcare app</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        min-height: 100vh;
+        padding: 20px 0;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+        color: white;
+        padding: 30px 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .card-container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 40px 30px;
+        flex: 1;
+        min-width: 320px;
+        max-width: 500px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .upload-card {
+        border-top: 4px solid #4a90e2;
+      }
+
+      .info-card {
+        border-top: 4px solid #5cb85c;
+      }
+
+      .icon-container {
+        color: #4a90e2;
+        margin-bottom: 25px;
+      }
+
+      .info-card .icon-container {
+        color: #5cb85c;
+      }
+
+      .card h4 {
+        color: #2c5282;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .custom-file-upload {
+        display: block;
+        padding: 15px;
+        background: #f8f9fa;
+        border: 2px dashed #c2cfe0;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+      }
+
+      .custom-file-upload:hover {
+        background: #e9ecef;
+        border-color: #4a90e2;
+      }
+
+      .custom-file-upload i {
+        color: #6c757d;
+        margin-right: 8px;
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .file-name {
+        color: #495057;
+        font-size: 0.9rem;
+        margin-top: 8px;
+        text-align: center;
+        min-height: 20px;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+      }
+
+      .btn-submit:hover {
+        background: linear-gradient(135deg, #357abd 0%, #2c5f9a 100%);
+        box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .btn-submit:active {
+        transform: translateY(0);
+      }
+
+      .description {
+        color: #495057;
+        line-height: 1.7;
+        text-align: left;
+      }
+
+      .description p {
+        margin-bottom: 15px;
+      }
+
+      .description strong {
+        color: #2c5282;
+        font-weight: 600;
+      }
+
+      .info-box {
+        background: #f0f7ff;
+        border-left: 4px solid #4a90e2;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 20px;
+      }
+
+      .info-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #2c5282;
+      }
+
+      @media (max-width: 768px) {
+        .header h3 {
+          font-size: 1.4rem;
+        }
+
+        .card {
+          min-width: 100%;
+        }
+
+        .card-container {
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h3>Private Diabetic Retinopathy Diagnosis System</h3>
+    </div>
+
+    <div class="main-container">
+      <div class="card-container">
+        <div class="card upload-card">
+          <div class="icon-container text-center">
+            <i class="fas fa-hospital-user fa-5x"></i>
+          </div>
+          <h4>Upload Medical Scan</h4>
+          
+          <form class="form-signin" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="inputfile" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Click to select retinal scan image</span>
+              </label>
+              <input type="file" name="file" id="inputfile" accept=".jpg,.jpeg,.png">
+              <div class="file-name" id="fileName">No file chosen</div>
+            </div>
+            <button class="btn-submit" type="submit">Analyze Scan</button>
+          </form>
+
+          <div class="info-box">
+            <p><i class="fas fa-shield-alt"></i> Your data remains private and secure on your device</p>
+          </div>
+        </div>
+
+        <div class="card info-card">
+          <div class="icon-container text-center">
+            <i class="fas fa-laptop-code fa-5x"></i>
+          </div>
+          <h4>How It Works</h4>
+          
+          <div class="description">
+            <p>Our system uses a <strong>privacy-first approach</strong> to medical diagnosis. A global agent contains the diagnostic model that is sent directly to your application.</p>
+            
+            <p>When you upload your retinal scan, the analysis is performed <strong>entirely on your local device</strong> – your medical images never leave your computer.</p>
+            
+            <p>This architecture ensures maximum privacy and compliance with healthcare data regulations while providing accurate diagnostic assistance.</p>
+          </div>
+
+          <div class="info-box">
+            <p><i class="fas fa-user-md"></i> Always consult with a healthcare professional for medical decisions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+      $('#inputfile').bind('change', function() {
+          let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+          if($.inArray(ext, ['jpg','jpeg', 'png']) == -1) {
+            $("#inputfile").val(null);
+            $("#fileName").text("No file chosen");
+            alert('Only JPEG/JPG/PNG files are allowed!');
+          } else {
+            let fileName = $('#inputfile')[0].files[0].name;
+            $("#fileName").text(fileName);
+          }
+      });
+    </script>
+  </body>
+</html>

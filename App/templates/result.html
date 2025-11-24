@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://kit.fontawesome.com/33b3cdea20.js" crossorigin="anonymous"></script>
+    <title>Diagnosis Result - Healthcare App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .result-container {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        padding: 50px 40px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        animation: fadeInUp 0.6s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .icon-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f5 100%);
+        border-radius: 50%;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+      }
+
+      .icon-wrapper i {
+        color: #4a90e2;
+      }
+
+      .result-title {
+        color: #2c5282;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+      }
+
+      .diagnosis-box {
+        background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+      }
+
+      .diagnosis-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        opacity: 0.95;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .diagnosis-result {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .warning-box {
+        background: #fff8e6;
+        border-left: 4px solid #ffa726;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 25px 0;
+        text-align: left;
+      }
+
+      .warning-box i {
+        color: #f57c00;
+        margin-right: 10px;
+      }
+
+      .warning-box p {
+        margin: 0;
+        color: #5d4037;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .advisory-text {
+        color: #495057;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin: 25px 0;
+      }
+
+      .btn-back {
+        display: inline-block;
+        padding: 14px 40px;
+        background: linear-gradient(135deg, #5cb85c 0%, #4a9d4a 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(92, 184, 92, 0.3);
+        margin-top: 20px;
+      }
+
+      .btn-back:hover {
+        background: linear-gradient(135deg, #4a9d4a 0%, #3d8b3d 100%);
+        box-shadow: 0 6px 12px rgba(92, 184, 92, 0.4);
+        transform: translateY(-2px);
+        text-decoration: none;
+        color: white;
+      }
+
+      .btn-back i {
+        margin-right: 8px;
+      }
+
+      .divider {
+        height: 2px;
+        background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+        margin: 30px 0;
+      }
+
+      @media (max-width: 576px) {
+        .result-container {
+          padding: 40px 25px;
+        }
+
+        .icon-wrapper {
+          width: 100px;
+          height: 100px;
+        }
+
+        .icon-wrapper i {
+          font-size: 3.5rem;
+        }
+
+        .diagnosis-result {
+          font-size: 1.6rem;
+        }
+
+        .result-title {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-container">
+      <div class="icon-wrapper">
+        <i class="fas fa-diagnoses fa-4x"></i>
+      </div>
+
+      <h1 class="result-title">Diagnostic Analysis Complete</h1>
+
+      <div class="diagnosis-box">
+        <div class="diagnosis-label">Diagnosis Result</div>
+        <p class="diagnosis-result">{{ class_name }}</p>
+      </div>
+
+      <div class="warning-box">
+        <p>
+          <i class="fas fa-exclamation-triangle"></i>
+          <strong>Important Notice:</strong> This is a preliminary automated analysis. Please consult with a qualified medical professional or ophthalmologist for proper diagnosis, treatment recommendations, and follow-up care.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="advisory-text">
+        Your privacy has been maintained throughout this analysis. All processing was performed locally on your device.
+      </p>
+
+      <a href="/" class="btn-back">
+        <i class="fas fa-arrow-left"></i>
+        Analyze Another Scan
+      </a>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>
