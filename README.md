@@ -1,6 +1,6 @@
 # Private Diabetic Retinopathy Diagnosis App
 
-A privacy-first web application for diabetic retinopathy diagnosis using machine learning. This application performs medical image analysis locally on the user's device, ensuring patient data privacy and HIPAA compliance.
+A privacy-first web application for diabetic retinopathy diagnosis using machine learning. This application performs medical image analysis locally on the user's device, ensuring patient data privacy.
 
 ## Features
 
@@ -27,7 +27,7 @@ A privacy-first web application for diabetic retinopathy diagnosis using machine
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/diabetic-retinopathy-app.git
+git clone https://github.com/anjSingh453/Federated-Learning-/tree/main
 cd diabetic-retinopathy-app
 ```
 
