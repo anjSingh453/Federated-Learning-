@@ -1,20 +1,26 @@
-# Private Diabetic Retinopathy Diagnosis App
+# Private Diabetic Retinopathy Diagnosis System
 
 A privacy-first web application for diabetic retinopathy diagnosis using machine learning. This application performs medical image analysis locally on the user's device, ensuring patient data privacy.
+Also implements a federated learning framework for classifying diabetic retinopathy stages from retinal fundus images. Instead of centralizing sensitive medical data, we train Yolo models locally across multiple simulated hospitals and aggregate model updates securely.
+
 
 ## Features
 
 -  **Privacy-First Architecture**: All image processing happens on the client side
 -  **Image Upload**: Supports JPEG, JPG, and PNG retinal scan images
+-   Federated Learning for Diabetic Retinopathy Classification
+-   Comparative analysis with centralized training
 
 
 ## Technology Stack
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Framework**: Bootstrap 4.2.1
-- **Icons**: Font Awesome 5.x
-- **Backend**: Flask (Python)
-- **Machine Learning**: TensorFlow/PyTorch (inference on device)
+- **Frontend**: HTML5, CSS, JavaScript
+- **Framework**: PyTorch
+- **Backend**: Flask ,pySyft
+
+## DataSet
+- APTOS 2019 Blindness
+- **Link** : https://www.kaggle.com/competitions/aptos2019-blindness-detection/data
 
 ## Installation
 
