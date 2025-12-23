@@ -3,6 +3,8 @@
 A privacy-first web application for diabetic retinopathy diagnosis using machine learning. This application performs medical image analysis locally on the user's device, ensuring patient data privacy.
 Also implements a federated learning framework for classifying diabetic retinopathy stages from retinal fundus images. Instead of centralizing sensitive medical data, we train Yolo models locally across multiple simulated hospitals and aggregate model updates securely.
 
+Reference Paper : https://arxiv.org/abs/2101.11693
+
 
 ## Features
 
