@@ -18,7 +18,7 @@ Reference Paper : https://arxiv.org/abs/2101.11693
 
 - **Frontend**: HTML5, CSS, JavaScript
 - **Framework**: PyTorch
-- **Backend**: Flask ,pySyft
+- **Backend**: Flask  
 
 ## DataSet
 - APTOS 2019 Blindness
